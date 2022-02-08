@@ -8,7 +8,7 @@
         @foreach ($posts as $post)
             <a href="{{ route('show', $post -> id) }}">
                 <li>
-                    {{ $post -> title }}
+                    {{ $post -> title }} - {{ $post -> category -> name }}
                 </li>
             </a>
         @endforeach

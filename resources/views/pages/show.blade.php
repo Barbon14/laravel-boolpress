@@ -9,6 +9,10 @@
             {{ $post-> text }}
         </h3>
         <img src="{{ $post-> img }}" alt="non trovo immagine">
+
+        <h4>
+            {{ $post -> category -> name }}
+        </h4>
     </article>
 
     <a href="{{ route('postList') }}">Back to List</a>

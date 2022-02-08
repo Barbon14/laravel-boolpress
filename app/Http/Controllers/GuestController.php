@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Category;
 use App\Post;
 
 use Illuminate\Http\Request;
@@ -28,7 +30,9 @@ class GuestController extends Controller
 
     public function create() {
 
-        return view('pages.create');
+        $categories = Category::all();
+
+        return view('pages.create', compact('categories'));
     }
 
     public function store(Request $request) {
@@ -39,7 +43,12 @@ class GuestController extends Controller
             'img' => 'nullable|string',
         ]);
 
-        $post = Post::create($data);
+        $post = Post::make($data);
+
+        $category = Category::findOrFail($request -> get('category'));
+
+        $post -> category() -> associate($category);
+        $post -> save();
 
         return redirect()->route('show', $post ->id);
     }
