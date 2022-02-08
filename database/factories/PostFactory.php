@@ -9,7 +9,7 @@ $factory->define(Post::class, function (Faker $faker) {
     return [
 
         'title' => $faker -> words(3, true),
-        'text' => $faker -> words(100, true),
+        'text' => $faker -> text(),
         'img' => $faker -> imageUrl()
     ];
 });
