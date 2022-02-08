@@ -10,6 +10,7 @@ class Post extends Model
         
         'title',
         'text',
-        'img'
+        'img',
+        'category_id'
     ];
 }
