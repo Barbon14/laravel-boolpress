@@ -13,6 +13,10 @@
         <h4>
             {{ $post -> category -> name }}
         </h4>
+
+        @foreach ($post -> tags as $tag)
+            {{ $tag -> name }}
+        @endforeach
     </article>
 
     <a href="{{ route('postList') }}">Back to List</a>
