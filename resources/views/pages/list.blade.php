@@ -13,6 +13,9 @@
                 - <a href="{{ route('edit', $post -> id) }}">
                     EDIT
                 </a>
+                - <a href="{{ route('delete', $post -> id) }}">
+                    DELETE
+                </a>
             </li>
         @endforeach
     </ul>
