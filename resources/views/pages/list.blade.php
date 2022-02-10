@@ -6,11 +6,14 @@
 
     <ul>
         @foreach ($posts as $post)
-            <a href="{{ route('show', $post -> id) }}">
-                <li>
+            <li>
+                <a href="{{ route('show', $post -> id) }}">
                     {{ $post -> title }} - {{ $post -> category -> name }}
-                </li>
-            </a>
+                </a>
+                - <a href="{{ route('edit', $post -> id) }}">
+                    EDIT
+                </a>
+            </li>
         @endforeach
     </ul>
 
